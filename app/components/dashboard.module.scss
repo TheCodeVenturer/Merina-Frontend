@@ -1,62 +1,142 @@
-.leftBar{
+.leftBar {
   height: fit-content;
   width: 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding:22px;
+  padding: 22px;
   box-sizing: border-box;
 
-  .logo{
+  .logo {
     margin: 10px 0;
-    width:101px;
-    height:63px;
+    width: 101px;
+    height: 63px;
   }
 
-  .featureContainer{
-    width:100%;
+  .featureContainer {
+    width: 100%;
 
-    .featureElement{
+    .featureElement {
       display: flex;
       flex-direction: row;
       align-items: center;
       margin: 3px 0;
-      cursor:pointer;
-      border:0;
+      cursor: pointer;
+      border: 0;
       border-radius: 10px;
 
-      p{
+      p {
         height: fit-content;
       }
-      +:hover{
-        color:white;
-        background-color:#7950F2;
+      + :hover {
+        color: white;
+        background-color: #7950f2;
       }
     }
-    .active{
-      color:white;
-      background-color:#7950F2;
+    .active {
+      color: white;
+      background-color: #7950f2;
     }
   }
 
-  .lastFeatureContainer{
-    width:100%;
+  .lastFeatureContainer {
+    width: 100%;
     margin-top: 30px;
-    .lastFeature{
+    .lastFeature {
       display: flex;
       flex-direction: row;
       align-items: center;
       border-radius: 10px;
-      border:0;
-      cursor:pointer;
-      background-color: #E8E9FF;
-      
+      border: 0;
+      cursor: pointer;
+      background-color: #e8e9ff;
     }
   }
 }
 
-nav{
-  width:100%;
+.navBar {
+  width: 100%;
+  box-sizing: border-box;
+  padding:0 5%;
   display: flex;
-}
+  flex-direction: row;
+  justify-content: space-between;
+  .searchBox {
+    display: flex;
+    padding: 2px;
+    align-items: center;
+    border: 0;
+    border-radius: 20px;
+    background-color: #e8e9ff50;
+    .inputBox {
+      border: 0;
+      outline: 0;
+      padding: 2px;
+      margin-left: 5px;
+      font-size: larger;
+      background: transparent;
+    }
+  }
 
+  .navRight {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .dateElement {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: fit-content;
+      padding: 10px;
+      border: 1px solid;
+      border-radius: 10px;
+      p {
+        margin: 0 5px;
+        display: flex;
+        align-items: center;
+
+        i {
+          padding: 0 5px;
+        }
+      }
+    }
+
+    .personalInfo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 10px;
+      height: 40px;
+      width: 250px;
+      div {
+        height:30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          $size: 30px;
+          height: $size;
+          width: $size;
+          border-radius: 5px;
+          margin: 5px;
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: start;
+          height: 100%;
+          small {
+            font-size: 10px;
+          }
+        }
+      }
+      i {
+        padding: 3px;
+      }
+    }
+  }
+}
