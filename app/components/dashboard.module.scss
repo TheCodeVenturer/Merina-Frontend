@@ -1,0 +1,62 @@
+.leftBar{
+  height: fit-content;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:22px;
+  box-sizing: border-box;
+
+  .logo{
+    margin: 10px 0;
+    width:101px;
+    height:63px;
+  }
+
+  .featureContainer{
+    width:100%;
+
+    .featureElement{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 3px 0;
+      cursor:pointer;
+      border:0;
+      border-radius: 10px;
+
+      p{
+        height: fit-content;
+      }
+      +:hover{
+        color:white;
+        background-color:#7950F2;
+      }
+    }
+    .active{
+      color:white;
+      background-color:#7950F2;
+    }
+  }
+
+  .lastFeatureContainer{
+    width:100%;
+    margin-top: 30px;
+    .lastFeature{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-radius: 10px;
+      border:0;
+      cursor:pointer;
+      background-color: #E8E9FF;
+      
+    }
+  }
+}
+
+nav{
+  width:100%;
+  display: flex;
+}
+

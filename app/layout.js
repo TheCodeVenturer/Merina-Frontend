@@ -1,5 +1,13 @@
 import { Inter } from 'next/font/google'
-import './globals.css'
+
+import { PrimeReactProvider } from 'primereact/api';
+import "primereact/resources/primereact.css"
+import "primeflex/primeflex.css"
+import "primeicons/primeicons.css"
+
+import "./globals.scss"
+        
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +19,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <PrimeReactProvider>
+        <body className={inter.className}>{children}</body>
+      </PrimeReactProvider>
     </html>
   )
 }
