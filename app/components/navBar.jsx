@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 import styles from "./dashboard.module.scss";
+import { FaCalendarAlt } from "react-icons/fa";
+import { FiSearch } from "react-icons/fi";
+import { IoChevronDown } from "react-icons/io5";
 
 const NavBar = () => {
   const [value, setValue] = useState("");
@@ -10,7 +13,7 @@ const NavBar = () => {
   return (
     <nav className={styles.navBar}>
       <div className={styles.searchBox}>
-        <i className="pi pi-search" style={{ opacity: "0.6" }} />
+        <FiSearch style={{ opacity: "0.6" }} />
         <input
           value={value}
           onChange={(e) => setValue(e.target.value)}
@@ -22,12 +25,12 @@ const NavBar = () => {
         <div className={styles.dateElement}>
           <p>
             11-10-2022
-            <i className="pi pi-search" />
+            <FaCalendarAlt  style={{padding: "0 8px", color:"#3a1597"}}/>
           </p>
           <p>OR</p>
           <p>
             11-10-2022
-            <i className="pi pi-search" />
+            <FaCalendarAlt style={{padding: "0 8px",color:"#3a1597"}}/>
           </p>
         </div>
 
@@ -39,7 +42,7 @@ const NavBar = () => {
               <p>{name}</p>
             </div>
           </div>
-          <i className="pi pi-search" />
+          <IoChevronDown style={{padding: "3px",}}/>
         </div>
       </div>
     </nav>

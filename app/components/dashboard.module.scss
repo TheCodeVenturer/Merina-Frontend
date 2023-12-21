@@ -1,10 +1,12 @@
+$primaryColor : #7950f2;
+$text : #030229;
 .leftBar {
   height: fit-content;
   width: 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 22px;
+  padding: 18px;
   box-sizing: border-box;
 
   .logo {
@@ -28,14 +30,19 @@
       p {
         height: fit-content;
       }
+
+      .featureLogo {
+        font-size: 1.1rem;
+        padding: 10px;
+      }
       + :hover {
         color: white;
-        background-color: #7950f2;
+        background-color: $primaryColor;
       }
     }
     .active {
       color: white;
-      background-color: #7950f2;
+      background-color: $primaryColor;
     }
   }
 
@@ -49,7 +56,7 @@
       border-radius: 10px;
       border: 0;
       cursor: pointer;
-      background-color: #e8e9ff;
+      background-color: #E8E9FF;
     }
   }
 }
@@ -57,7 +64,8 @@
 .navBar {
   width: 100%;
   box-sizing: border-box;
-  padding:0 5%;
+  margin: 20px;
+  padding: 0 5%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -66,8 +74,8 @@
     padding: 2px;
     align-items: center;
     border: 0;
-    border-radius: 20px;
-    background-color: #e8e9ff50;
+    border-radius: 10px;
+    background-color: #FCFCFD;
     .inputBox {
       border: 0;
       outline: 0;
@@ -90,16 +98,13 @@
       align-items: center;
       width: fit-content;
       padding: 10px;
-      border: 1px solid;
+      border: 1px solid #A0A3BD;
       border-radius: 10px;
       p {
         margin: 0 5px;
         display: flex;
         align-items: center;
 
-        i {
-          padding: 0 5px;
-        }
       }
     }
 
@@ -108,11 +113,14 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      border:1px solid #E8EFF7;
+      border-radius:10px;
       margin-left: 10px;
       height: 40px;
       width: 250px;
+      color:#373B5C;
       div {
-        height:30px;
+        height: 30px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -134,9 +142,73 @@
           }
         }
       }
-      i {
-        padding: 3px;
+    }
+  }
+}
+
+.about {
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 10px 0 10px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  // background: red;
+  color: $text;
+  h2 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}
+
+.activityContainer {
+  display: flex;
+  margin: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .card{
+    flex-grow: 1;
+    margin:0 5px;
+    padding:10px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    div{
+      margin:0 10px;
+      font-size:small;
+      .content{
+        margin:5px;
+        color:$text;
+      }
+
+      .rate{
+        margin:5px;
+        color:#9F9F9F;
       }
     }
+    .icon{
+      $size:1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: $size;
+      width : calc($size + 30px);
+      height: calc($size + 30px);
+      box-sizing: border-box;
+      border-radius:100%;
+      color:white;
+      background-color:$primaryColor;
+    }
+  }
+  h4{
+    font-size: x-large;
+    color:$text;
   }
 }

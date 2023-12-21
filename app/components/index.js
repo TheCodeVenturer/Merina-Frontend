@@ -1,2 +1,5 @@
 export {default as LeftBar} from "./leftbar"
 export {default as NavBar} from "./navBar"
+export {default as About} from "./about"
+export {default as Activity} from "./activity"
+export {default as Analytics} from "./analytics"

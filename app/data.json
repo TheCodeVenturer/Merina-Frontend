@@ -1,0 +1,52 @@
+{
+  "Recent_Activities" : [
+    {
+      "Time" : "11:20 AM",
+      "User_Type":"New User",
+      "User_Name":"Erik Pitman",
+      "content":"You might remember the Dell computer commercials in which a youth reports this exciting news to his friends that they are about to get their new computer."
+    },
+    {
+      "Time" : "08:20 PM",
+      "User_Type":"Repeat User",
+      "User_Name":"Michael Jordan",
+      "content":"You might remember the Dell computer commercials in which a youth reports this exciting news to his friends that they are about to get their new computer."
+    },
+    {
+      "Time" : "00:00 AM",
+      "User_Type":"New User",
+      "User_Name":"Ethan Hunt",
+      "content":"You might remember the Dell computer commercials in which a youth reports this exciting news to his friends that they are about to get their new computer."
+    }
+  ],
+  "Top_User":[
+    {
+      "Image":"https://cdn4.sharechat.com/img_5562_31199123_1679941002812_sc.jpg",
+      "User_Name":"Erik Pitman",
+      "Purchased" : 3,
+      "Saved" : 4,
+      "Email" : "erik_pitman@merina.com"
+    },
+    {
+      "Image":"https://sabwishes.com/wp-content/uploads/2023/05/gvbn-1-1-653x1024.png",
+      "User_Name":"Erik Pitman",
+      "Purchased" : 3,
+      "Saved" : 4,
+      "Email" : "erik_pitman@merina.com"
+    },
+    {
+      "Image":"https://cdn4.sharechat.com/img_5562_31199123_1679941002812_sc.jpg",
+      "User_Name":"Erik Pitman",
+      "Purchased" : 3,
+      "Saved" : 4,
+      "Email" : "erik_pitman@merina.com"
+    },
+    {
+      "Image":"https://sabwishes.com/wp-content/uploads/2023/05/gvbn-1-1-653x1024.png",
+      "User_Name":"Erik Pitman",
+      "Purchased" : 3,
+      "Saved" : 4,
+      "Email" : "erik_pitman@merina.com"
+    }
+  ]
+}

@@ -1,59 +1,64 @@
 import Image from "next/image";
 import styles from "./dashboard.module.scss";
+import { FaHome, FaRegFileAlt, FaRegUser, FaHeadphonesAlt } from "react-icons/fa";
+import { AiOutlineTeam } from "react-icons/ai";
+import { GrAnalytics, GrMultimedia, GrCloudComputer } from "react-icons/gr";
+import { IoSettings, IoNotifications } from "react-icons/io5";
+import { MdSubscriptions } from "react-icons/md";
+import React from "react";
 
 const featureElements = [
   {
     name: "Dashboard",
-    icon: "home",
+    icon: FaHome,
     link: "#",
   },
   {
     name: "Content",
-    icon: "file",
+    icon: FaRegFileAlt,
     link: "#",
   },
   {
     name: "Team",
-    icon: "home",
+    icon: AiOutlineTeam,
     link: "#users",
   },
   {
     name: "User",
-    icon: "home",
+    icon: FaRegUser ,
     link: "#",
   },
   {
     name: "App/Web",
-    icon: "home",
+    icon: GrCloudComputer ,
     link: "#",
   },
   {
     name: "Analytics",
-    icon: "home",
+    icon: GrAnalytics ,
     link: "#",
   },
   {
     name: "Media",
-    icon: "home",
+    icon: GrMultimedia ,
     link: "#",
   },
   {
     name: "Notification",
-    icon: "home",
+    icon: IoNotifications ,
     link: "#",
   },
   {
     name: "Subscription",
-    icon: "home",
+    icon: MdSubscriptions ,
     link: "#",
   },
   {
     name: "Settings",
-    icon: "home",
+    icon: IoSettings ,
     link: "#",
   },
 ];
-
 const Leftbar = () => {
   return (
     <div className={`${styles.leftBar}`}>
@@ -68,12 +73,9 @@ const Leftbar = () => {
           return (
             <div
               key={id}
-              className={`${styles.featureElement} ${id == 0 && styles.active}`}
+              className={`${styles.featureElement} ${id === 0 && styles.active}`}
             >
-              <i
-                className={`pi pi-${ele.icon}`}
-                style={{ padding: "15px", fontSize: "1.1rem" }}
-              ></i>
+                {ele.icon && React.createElement(ele.icon,{className:`${styles.featureLogo}`})}
               <p className={`${styles.featureElement}`}>{ele.name}</p>
             </div>
           );
@@ -81,10 +83,7 @@ const Leftbar = () => {
       </div>
       <div className={`${styles.lastFeatureContainer}`}>
         <div className={`${styles.lastFeature}`}>
-          <i
-            className={`pi pi-home`}
-            style={{ padding: "12px", fontSize: "1.1rem" }}
-          ></i>
+          <FaHeadphonesAlt className={styles.featureLogo} style={{padding:"10px", fontSize:"1.1rem"}}/>
           <p className={`${styles.lastFeature}`}>Contact Support</p>
         </div>
       </div>

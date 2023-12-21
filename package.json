@@ -9,12 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "chart.js": "^4.4.1",
+    "chartjs-adapter-date-fns": "^3.0.0",
+    "chartjs-chart-geo": "^4.2.7",
+    "date-fns": "^3.0.0",
     "next": "14.0.4",
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
     "primereact": "^10.2.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^4.12.0",
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {

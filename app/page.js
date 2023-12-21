@@ -1,4 +1,4 @@
-import { LeftBar, NavBar } from "./components"
+import { LeftBar, NavBar, About, Activity, Analytics } from "./components"
 
 
 export default function Home() {
@@ -7,6 +7,9 @@ export default function Home() {
     <LeftBar/>
     <div className="main-content">
       <NavBar/>
+      <About/>
+      <Activity/>
+      <Analytics/>
     </div>
    </main>
   )
