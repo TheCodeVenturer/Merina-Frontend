@@ -66,10 +66,10 @@ $bgColor: #e8e9ff;
       }
 
       .buttonSections {
-        margin: 12px;
+        margin: 12px 0;
         padding: 0 10px;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         background-color: $bgColor;
         border-radius: 10px;
         font-size: 16px;
@@ -174,7 +174,7 @@ $bgColor: #e8e9ff;
         margin: 12px;
         padding: 0 10px;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         background-color: $bgColor;
         border-radius: 10px;
         .section {
@@ -303,6 +303,7 @@ $bgColor: #e8e9ff;
           }
 
           .contentContainer {
+            font-size: 14px;
             .contentDetails {
               margin-left: 10px;
               span {
@@ -324,7 +325,8 @@ $bgColor: #e8e9ff;
     width: 100%;
     display: flex;
     flex-direction: row;
-
+    // align-items: stretch;
+    margin-top: 10px;
     .topUsers {
       // flex-grow: 1;
       box-sizing: border-box;
@@ -347,38 +349,38 @@ $bgColor: #e8e9ff;
         }
       }
 
-      .topUsersContainer{
+      .topUsersContainer {
         box-sizing: border-box;
         margin: 5px 10px;
-        .topUser{
+        .topUser {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
-          .userInfo{
+          .userInfo {
             display: flex;
             flex-direction: row;
-            margin:5px 0;
-            img{
-              height:60px;
-              width:60px;
+            margin: 5px 0;
+            img {
+              height: 50px;
+              width: 50px;
               border-radius: 10px;
             }
-            div{
+            div {
               margin-left: 10px;
-              h4{
+              h4 {
                 margin: 5px 0;
               }
-              p{
-                color: #A0A3BD;
-                margin: 10px 0;
+              p {
+                color: #a0a3bd;
+                margin: 6px 0;
                 letter-spacing: -1px;
                 font-size: 15px;
               }
             }
           }
         }
-        .icon{
+        .icon {
           box-sizing: border-box;
           font-size: 28px;
           display: flex;
@@ -388,8 +390,100 @@ $bgColor: #e8e9ff;
           min-width: 50px;
           margin: 0 10px;
           border-radius: 100%;
-          color: #A0A3BD;
+          color: #a0a3bd;
           background-color: white;
+        }
+      }
+    }
+
+    .userbyLocation {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      width: 67%;
+      box-sizing: border-box;
+      .worldChart {
+        width: 60%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h3{
+          margin: 20px 10px;
+        }
+        .chart {
+          width: 100%;
+          position: relative;
+          flex-grow: 1;
+        }
+      }
+      .top10 {
+        width: 40%;
+        margin: 10px;
+        h3 {
+          padding: 10px 0;
+        }
+
+        .heading {
+          margin: 10px 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          padding: 10px;
+          font-size: 15px;
+          font-weight: 600;
+          align-items: center;
+          background-color: #c7c8eb;
+          border-radius: 5px 5px 0 0;
+          .icon {
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+          }
+        }
+        .countries {
+          flex-grow: 1;
+          max-height: 220px;
+          overflow-y: scroll;
+
+          @mixin scrollbar() {
+            &::-webkit-scrollbar {
+              width: 8px;
+            }
+            &::-webkit-scrollbar-thumb {
+              border-radius: 7px;
+              background-color: $primaryColor;
+            }
+            &::-webkit-scrollbar-track {
+              border-radius: 10px;
+              background: $bgColor;
+            }
+          }
+
+          @include scrollbar();
+
+          .countryUserData {
+            text-align: center;
+            display: flex;
+            justify-content:space-between;
+            padding: 8px 15px;
+            margin: 8px 2px;
+
+            div{
+              + :nth-child(1){
+                background-color: green;
+              }
+
+              + :nth-child(2){
+                margin-right:20px;
+              }
+            }
+          }
+          & :hover {
+            background-color: $bgColor;
+          }
         }
       }
     }

@@ -48,5 +48,31 @@
       "Saved" : 4,
       "Email" : "erik_pitman@merina.com"
     }
-  ]
+  ],
+  "User_By_Location" : {
+    "Brazil": { "Current_User": 25000, "New_User": 207 },
+    "India": { "Current_User": 30080, "New_User": 2551 },
+    "Australia": { "Current_User": 18300, "New_User": 1550 },
+    "United States of America": { "Current_User": 35000, "New_User": 3040 },
+    "United Kingdom": { "Current_User": 22000, "New_User": 1810 },
+    "Zimbabwe": { "Current_User": 12000, "New_User": 1000 },
+    "Zambia": { "Current_User": 8090, "New_User": 700 },
+    "Yemen": { "Current_User": 6000, "New_User": 500 },
+    "Vietnam": { "Current_User": 15000, "New_User": 1200 },
+    "Venezuela": { "Current_User": 9050, "New_User": 800 },
+    "Vanuatu": { "Current_User": 5010, "New_User": 400 },
+    "Turkmenistan": { "Current_User": 4500, "New_User": 350 },
+    "Turkey": { "Current_User": 28000, "New_User": 2300 },
+    "Thailand": { "Current_User": 20010, "New_User": 1609 },
+    "Taiwan": { "Current_User": 10600, "New_User": 800 },
+    "Switzerland": { "Current_User": 16000, "New_User": 1300 },
+    "Sweden": { "Current_User": 12000, "New_User": 1000 },
+    "Sri Lanka": { "Current_User": 7000, "New_User": 600 },
+    "Spain": { "Current_User": 22070, "New_User": 1880 },
+    "South Korea": { "Current_User": 25000, "New_User": 2100 },
+    "South Africa": { "Current_User": 13060, "New_User": 1100 },
+    "Somalia": { "Current_User": 3000, "New_User": 250 },
+    "Slovakia": { "Current_User": 9000, "New_User": 830 },
+    "Netherlands": { "Current_User": 30040, "New_User": 2500 }
+  }
 }

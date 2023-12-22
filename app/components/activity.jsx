@@ -24,7 +24,7 @@ const ActivityCard = ({children,content,rate,month,value})=>{
         {children}
         </div>
         <p className={styles.content}>{content}</p>
-        <p className={styles.rate}><span style={{color:`${rate>0?'green':'red'}`}}>{rate}%</span> From {month}</p>
+        <p className={styles.rate}><span style={{color:`${rate>0?'green':'red'}`}}>{rate>0 && '+'}{rate}%</span> From {month}</p>
       </div>
       <h4>{value}</h4>
     </div>

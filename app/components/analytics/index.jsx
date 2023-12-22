@@ -35,7 +35,7 @@ const Analytics = async () => {
       </div>
       <div className={styles.sectionFour}>
         {data.Top_User && <TopUsers data = {data.Top_User}/>}
-        <UserbyLocation/>
+        {data.User_By_Location && <UserbyLocation worldData={data.User_By_Location}/>}
       </div>
     </div>
   );
