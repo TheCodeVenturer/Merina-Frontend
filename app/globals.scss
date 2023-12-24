@@ -5,11 +5,10 @@
 
 main{
   display: flex;
-}
-
-.main-content{
-	margin:10px;
-	width:85vw;
-	box-sizing: border-box;
-	overflow-x: hidden;
+	.main-content{
+		margin:10px;
+		width:85vw;
+		box-sizing: border-box;
+		overflow-x: hidden;
+	}
 }
