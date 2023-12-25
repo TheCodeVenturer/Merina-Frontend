@@ -43,6 +43,7 @@
     >The Major Problem while designing this arised that which package to use as PrimeReact also have no support for geo maps and found chartjs-chart-geo to render the <a href="./app/components/analytics/userbyLocation.jsx">Map </a>
 
 
+
 ## Challenges in Backend
 
 ### Workflow of Backend

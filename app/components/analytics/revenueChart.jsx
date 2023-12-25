@@ -11,26 +11,26 @@ const RevenueChart = ({ graphData, Total }) => {
 
   useEffect(() => {
     const data = {
-      labels: graphData.map((ele) => ele.Year),
+      labels: graphData.map((ele) => ele.Year), // extracting labels from graphData
       datasets: [
         {
-          data: graphData.map((ele) => ele.Revenue),
+          data: graphData.map((ele) => ele.Revenue), // extracting the data from graphData Object
           backgroundColor: "#E8E9FF",
           hoverBackgroundColor: "#7950f2",
-          borderRadius: 200,
-          barPercentage: 0.35,
+          borderRadius: 200,      //sets the bar rounded at top
+          barPercentage: 0.35,    //sets Bar Width Default is 0.9
         },
       ],
     };
     const options = {
-      responsive: true,
-      maintainAspectRatio : false,
+      responsive: true, // set this to true for making the canvas dynamic to layouts for responsiveness
+      maintainAspectRatio : false, // ignores the x:y ratio
       scales: {
         y: {
-          beginAtZero: true,
+          beginAtZero: true, // y-label starts at zero
           ticks: {
             callback: function (val, index) {
-              return `$${val}`;
+              return `$${val}`;   // Update the y-labels to customised y-label
             },
           },
         },
@@ -40,7 +40,7 @@ const RevenueChart = ({ graphData, Total }) => {
           display: false,
         },
         tooltip: {
-          caretSize: 0,
+          caretSize: 0,     // removes the teeth of tooltip
           callbacks: {
             title: function () {
               return "";

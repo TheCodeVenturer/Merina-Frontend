@@ -11,7 +11,7 @@ const MonthlySubscriber = ({ graphData, Total }) => {
   useEffect(() => {
     // console.log(graphData);
     const data = {
-      labels: graphData.map((ele, index) => `${index + 1}-1`),
+      labels: graphData.map((ele, index) => `${index + 1}-1`), // generating labels from index of GraphData
       datasets: [
         {
           data: graphData,
@@ -21,8 +21,8 @@ const MonthlySubscriber = ({ graphData, Total }) => {
       ],
     };
     const options = {
-      responsive: true,
-      maintainAspectRatio: false,
+      responsive: true, // set this to true for making the canvas dynamic to layouts for responsiveness
+      maintainAspectRatio: false,  // ignores the x:y ratio to support responsiveness
       scales: {
         y: {
           beginAtZero: true,
@@ -38,7 +38,7 @@ const MonthlySubscriber = ({ graphData, Total }) => {
           display: false,
         },
         tooltip: {
-          caretSize: 0,
+          caretSize: 0, // Hide the tooltip teeth
           callbacks: {
             title: function () {
               return "";
@@ -51,7 +51,7 @@ const MonthlySubscriber = ({ graphData, Total }) => {
               return label;
             },
           },
-          displayColors: false,
+          displayColors: false, //hide color inside tooltip
           yAlign: "bottom",
         },
       },
@@ -74,7 +74,7 @@ const MonthlySubscriber = ({ graphData, Total }) => {
           </p>
         </div>
         <p>Revenue</p>
-        <h4>${Total.toLocaleString()}</h4>
+        <h4>${Total.toLocaleString()}</h4>  {/* Used to format no.s in proper form */}
       </div>
       <Chart
         type="bar"

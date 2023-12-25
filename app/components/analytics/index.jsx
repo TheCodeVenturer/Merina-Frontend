@@ -1,3 +1,6 @@
+//this is the Analytics Component imported to main page.js 
+
+
 import styles from "./analytics.module.scss"
 import RevenueChart from "./revenueChart"
 import OverallAnalytics from "./overallAnalytics"
@@ -11,10 +14,12 @@ import UserbyLocation from "./userbyLocation"
 import data from "../../data.json"
 
 const fetchData = async () =>{
+  // This fetches the data from the api end point
   const res = await fetch("https://api.npoint.io/5f754613678cbebe119c")
   const data = await res.json()
   return data
 }
+
 const Analytics = async () => {
   const analyticsData = await fetchData()
   // console.log(analyticsData.Overall_Analytics.GraphData);

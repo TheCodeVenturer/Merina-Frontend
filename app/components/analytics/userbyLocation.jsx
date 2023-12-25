@@ -7,13 +7,18 @@ import * as ChartGeo from "chartjs-chart-geo";
 import { FaChevronDown } from "react-icons/fa6";
 
 Chart.register(
-  ChartGeo.ChoroplethController,
+  ChartGeo.ChoroplethController, 
   ChartGeo.ProjectionScale,
   ChartGeo.ColorScale,
   ChartGeo.GeoFeature
 );
 
+// Normally chart.js has no implementation for Maps
+// By Installing chatjs-chart-geo we can get this feature
+// Next we have to register the new features to the Chart.js , in simple words adding the chartjs-chart-geo plugin to chart.js
+
 function top10(worldData) {
+  //sort the countries in decreasing order of new users and return thetop 10
   let countryNames = Object.keys(worldData);
   countryNames.sort((a, b) => {
     return -(worldData[a].New_User - worldData[b].New_User);
@@ -21,16 +26,20 @@ function top10(worldData) {
   countryNames = countryNames.slice(0, 10);
   return countryNames;
 }
+
 const UserbyLocation = ({ worldData }) => {
   const [chartData, setChartData] = useState({});
   const [chartOptions, setChartOptions] = useState({});
   const countryNames = top10(worldData);
   useEffect(() => {
     const handle = async () => {
+      // Fetching this to get all countries details to use with chartjs-chart-geo
       const response = await fetch(
         "https://unpkg.com/world-atlas/countries-50m.json"
       );
       const mapData = await response.json();
+
+      //extracting countries from the mapData using ChartJs-Geo topojson.feature
       const countries = ChartGeo.topojson.feature(
         mapData,
         mapData.objects.countries
@@ -48,7 +57,7 @@ const UserbyLocation = ({ worldData }) => {
             backgroundColor: "#7882A4",
             hoverBackgroundColor: "#7950f2",
             borderColor: "white",
-            borderWidth: 0.2,
+            borderWidth: 0.2, // sets borders width, here setting country border width
           },
         ],
       };
@@ -74,7 +83,7 @@ const UserbyLocation = ({ worldData }) => {
                   " last 24 hrs"
                 );
               },
-              afterTitle: function (context) {
+              afterTitle: function (context) { // sets After title to add new data to Tooltip
                 const countryName =
                   countries[context[0].dataIndex].properties.name;
                 let value = `0`;
@@ -105,10 +114,10 @@ const UserbyLocation = ({ worldData }) => {
         scales: {
           projection: {
             axis: "x",
-            projection: "equalEarth",
+            projection: "equalEarth",   //used to display the Earth on a flat surface
           },
           color: {
-            axis: "XY",
+            axis: "XY",   //specifies that the chart should have both an X and a Y axis
             display: false,
           },
         },
@@ -123,6 +132,7 @@ const UserbyLocation = ({ worldData }) => {
     <div className={styles.userbyLocation}>
       <div className={styles.worldChart}>
         <h3>User by Location</h3>
+        {/* Here using PrimeChart which is actually the Prime/Chart Component, used this as to Register chartjs-chart-geo feature on Chart.js imported as Chart*/}
         <PrimeChart
           type="choropleth"
           data={chartData}

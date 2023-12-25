@@ -15,12 +15,11 @@ const YearlySubscriber = ({ graphData, Total }) => {
       datasets: [
         {
           data: graphData.map((ele) => ele.Subscribers),
-          fill: false,
           tension: 0.4,
           borderColor: "black",
-          borderWidth: 2,
-          pointBorderColor: "rgba(0, 0, 0, 0)",
-          pointBackgroundColor: "rgba(0, 0, 0, 0)",
+          borderWidth: 2, // use to set width of the line
+          pointBorderColor: "rgba(0, 0, 0, 0)", //sets the border color of the poins to transparent
+          pointBackgroundColor: "rgba(0, 0, 0, 0)", //sets background color of the points to transparent
           pointHoverBackgroundColor: "black",
         },
       ],
@@ -56,7 +55,7 @@ const YearlySubscriber = ({ graphData, Total }) => {
         x: {
           type: "time",
           time: {
-            unit: "year",
+            unit: "year", // used to show only years on labels with showing each point on th Graph
           },
           bounds: "ticks", // displays bounds even if data is not sufficient
         },

@@ -10,7 +10,7 @@ const Articles = ({data}) => {
   const [currentItems, setCurrentItems] = useState([])
 
   useEffect(()=>{
-    const updatedCurrentItems = data.slice((currentIndex-1)*4,currentIndex*4);
+    const updatedCurrentItems = data.slice((currentIndex-1)*4,currentIndex*4); // sets only 4 or less elements in the array
     setCurrentItems(updatedCurrentItems);
   },[currentIndex])
   return (
@@ -44,13 +44,13 @@ const Articles = ({data}) => {
         {currentItems.map((ele,idx)=>{
           return (
           <tr key={idx} >
-            <td >{ele.Title.length>38?`${ele.Title.substring(0,35)}...`:ele.Title}</td>
+            <td >{ele.Title.length>38?`${ele.Title.substring(0,35)}...`:ele.Title}</td> {/* Helps to show the string in shorter size to overcome overflow or decline in UX*/}
             <td >{ele.StoryViews}</td>
             <td >{ele.PaywallClicks}</td>
             <td >{ele.PurchaseAmount}</td>
             <td >
-              <Link href={ele.slug}>
-              <FaExternalLinkAlt style={{color:"#7950f2"}}/>
+              <Link href={ele.slug}> {/* Used Link Component for future implementation  of the Specific-Article*/}
+                <FaExternalLinkAlt style={{color:"#7950f2"}}/>
               </Link>
               </td>
           </tr>
@@ -60,18 +60,18 @@ const Articles = ({data}) => {
       </table>
       <div className={styles.tableFunctions}>
         <div>
-          Showing {currentIndex} out of {Math.ceil(data.length/4)}
+          Showing {currentIndex} out of {Math.ceil(data.length/4)}  
         </div>
         <div className={`card flex flex-wrap justify-content-center gap-3 ${styles.buttonBox}`} >
           <div  className={styles.functionButton}>
-            <Button icon="pi pi-chevron-left" onClick={()=>{
+            <Button icon="pi pi-chevron-left" onClick={()=>{ {/* Update the table row with previous elements */}
               setCurrentIndex(currentIndex-1);
             }} disabled={currentIndex===1}/>
             </div>
             <p>{currentIndex}</p>
             <div  className={styles.functionButton}>
 
-            <Button icon="pi pi-chevron-right" onClick={()=>{
+            <Button icon="pi pi-chevron-right" onClick={()=>{ {/* Update the table row with next elements */}
               setCurrentIndex(currentIndex+1);
             }} disabled={currentIndex===Math.ceil(data.length/4)}/>
             </div>
