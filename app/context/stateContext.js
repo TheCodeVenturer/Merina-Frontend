@@ -1,11 +1,11 @@
 'use client'
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useRef } from "react";
 
 
 const context = createContext();
 
 export const StateContext = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({name:"Niraj Modi"});
   const updateUser = (user) =>{
     setUser(user)
   }
@@ -13,7 +13,7 @@ export const StateContext = ({ children }) => {
     <context.Provider
       value={{
         user,
-        updateUser
+        updateUser,
       }}
     >
       {children}

@@ -1,12 +1,11 @@
-import { cookies } from "next/headers";
 import { Inter } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 import { StateContext } from "./context/stateContext";
 import { PrimeReactProvider } from "primereact/api";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
 import "primeicons/primeicons.css";
-
 import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,11 +20,12 @@ export async function generateMetadata() {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <StateContext>
-      <PrimeReactProvider>
-        <body className={inter.className}>{children}</body>
-      </PrimeReactProvider>
-      </StateContext>
+      <body className={inter.className}>
+        <Toaster position="top-right" />
+        <PrimeReactProvider>
+          <StateContext>{children}</StateContext>
+        </PrimeReactProvider>
+      </body>
     </html>
   );
 }
