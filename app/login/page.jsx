@@ -21,7 +21,7 @@ const Login = () => {
     const userData = { username, password };
     try {
       const response = await axios.post(
-        "http://localhost:5555/login",
+        "https://merina-backend-production.up.railway.app/login",
         userData,
         { withCredentials: true }
       );
@@ -45,7 +45,7 @@ const Login = () => {
   const handleMagicLogin = async (e) =>{
     try {
       const response = await axios.post(
-        "http://localhost:5555/magiclogin",
+        "https://merina-backend-production.up.railway.app/magiclogin",
         {destination:username},
         { withCredentials: true }
       );
@@ -55,7 +55,7 @@ const Login = () => {
     }
   }
   const google = () => {
-    window.open("http://localhost:5555/google", "_self");
+    window.open("https://merina-backend-production.up.railway.app/google", "_self");
   };
   if (authenticated) redirect("/");
   return (

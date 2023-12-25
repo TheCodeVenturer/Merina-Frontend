@@ -20,7 +20,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     const userData = { name, username, password };
     try{
-      const response = await axios.post("http://localhost:5555/register",userData);
+      const response = await axios.post("https://merina-backend-production.up.railway.app/register",userData);
       // console.log(response)
       if(response.data){
         toast.current.show({ severity: 'info', summary: 'Info', detail: 'Registered Succesfull' })
@@ -41,7 +41,7 @@ const Register = () => {
   };
 
   const google = () => {
-    window.open("http://localhost:5555/google", "_self");
+    window.open("https://merina-backend-production.up.railway.app/google", "_self");
   };
   if(user.username) redirect("/")
   return (
