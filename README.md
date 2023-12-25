@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hi, There
 
-## Getting Started
+## Challanges in Frontend
 
-First, run the development server:
+### Application Designed using this flow
+1. Designed Left Side Bar
+2. Next Designed NavBar
+3. Next Designed About Section
+4. Next Designed Activity Section
+5. > #### Then Designed Analytics sectin
+   > * Designed OverAll Analytics
+   > * Designed Revenue Chart
+   > * Designed MicroPayments
+   > * Designed Monthly Subscriber
+   > * Designed Yearly Subscriber
+   > * Designed Top stories in last 30 days
+   > * Designed Recent Activities
+   > * Designed Top user in last 30 days
+   > * Designed User by Location
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Challanges in the Above Flow:-
+1. while Designing sideBar, I was using the Icon Components as value of key icon inside a object of all buttons, but it created a problem as it take time initialise those icon key which gives error when using map as it shows that icon has not loaded yet
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+5. > I was Very New to Chart.js so it too much challenging for me to mimic the exact design, so tackled it by completing the design from one side
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    >First rendered the charts with all defaults copying from PrimeReact
 
-## Learn More
+    > Then first changed the BackGround and Hover Colour
 
-To learn more about Next.js, take a look at the following resources:
+    > Then designed the tooltip, it's teeth, modified text inside it using callbacks, aligned it
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    >If the bar was rounded on top then changed it as given
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    >In Line charts the data was in decimals so changed labels, accordingly so that only integer part shows up 
 
-## Deploy on Vercel
+    >The Main problem arised with the yearly subscriber Line Chart as there might be many points in a year but display the year only and found the solution with chartjs-adapter-date-fns package
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    >Next the first label was not visible in the Graph
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    >So set scales bounds to "ticks" to include the first lavel
+
+    >The Major Problem while designing this arised that which package to use as PrimeReact also have no support for geo maps and found chartjs-chart-geo to render the <a href="./app/components/analytics/userbyLocation.jsx">Map </a>
+
+
+## Challenges in Backend
+
+### Workflow of Backend
+1. Designed Passport-local support with serializing and deserializing
+2. Designed Passport-Google-oauth2.0 support
+3. NodeMailer Setup for sending mails
+4. Designed Passport-Magic Login setup
+
+### Challenges in the Above Flow
+1. 

@@ -4,8 +4,8 @@ import { LeftBar, NavBar, About, Activity, Analytics } from "./components";
 export default function Home() {
   return (
     <main>
-      <LeftBar />
-      <div className="main-content">
+      <LeftBar />  {/* LeftBar */}
+      <div className="main-content"> {/*RightBar or DashBoard*/}
         <NavBar/>
         <About />
         <Activity />

@@ -17,6 +17,7 @@ const NavBar = () => {
     "https://i.pinimg.com/474x/98/51/1e/98511ee98a1930b8938e42caf0904d2d.jpg";
   
   // useEffect(()=>{
+    // fetch User when the loading the set the user in the Global State
   //   const fetchUser = async ()=>{
   //       const response = await axios.get("http://localhost:5555/login/success",{withCredentials:true});
   //       console.log(response);

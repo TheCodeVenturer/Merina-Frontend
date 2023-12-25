@@ -16,6 +16,9 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const router = useRouter();
   const handleRegister = async (e) => {
+    // Here we are creating a promise which Makes the Post Request and depending on the request either resolve or reject the promise,
+    // Used this promise as toast.promise accepts a promise and renders output depending on resolve or reject status
+
     // const userData = { name, username, password };
     // const registerPromise = new Promise(async (resolve, reject) => {
     //   try {
@@ -35,7 +38,6 @@ const Register = () => {
     //   setUsername("");
     //   setPassword("");
     // });
-
     // try {
     //   await toast.promise(registerPromise, {
     //     loading: "Registering...",
@@ -46,12 +48,11 @@ const Register = () => {
   };
 
   const google = () => {
-    // window.open("http://localhost:5555/google", "_self");
+    // window.open("http://localhost:5555/google", "_self");   // handling sign in with google
   };
-  if (user.username) redirect("/");
+  if (user.username) redirect("/"); // client side Authentication
   return (
     <div className={styles.loginScreen}>
-      <div className="card flex justify-content-center"></div>
       <div className={styles.applicationBio}>
         <div>
           <h2>
@@ -96,7 +97,7 @@ const Register = () => {
           <Button
             onClick={handleRegister}
             className={styles.button}
-            disabled={(!username || !password || !name) && true}
+            disabled={(!username || !password || !name) && true} // Setting Disabled True when username and password is empty
             label="Submit"
           />
           <Button

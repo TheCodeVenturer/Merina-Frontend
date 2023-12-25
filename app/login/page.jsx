@@ -18,7 +18,12 @@ const Login = () => {
   const [submit, updateSubmit] = useState(false);
   // console.log(user);
   const handleLogin = async (e) => {
-    // updateSubmit(true);
+
+    // Here we are creating a promise which Makes the Post Request and depending on the request either resolve or reject the promise,
+    // Used this promise as toast.promise accepts a promise and renders output depending on resolve or reject status
+
+
+    // updateSubmit(true); //disables the SignIn Button
     // const userData = { username, password };
     // const logInPromise = new Promise(async (resolve, reject) => {
     //   try {
@@ -52,7 +57,11 @@ const Login = () => {
   };
 
   const handleMagicLogin = async (e) => {
-    // updateSubmit(true);
+    // Here we are creating a promise which Makes the Post Request and depending on the request either resolve or reject the promise,
+    // Used this promise as toast.promise accepts a promise and renders output depending on resolve or reject status
+
+
+    // updateSubmit(true); //disables the send Link Button
     // const sendMail = new Promise(async (resolve, reject) => {
     //   try {
     //     const response = await axios.post(
@@ -83,7 +92,6 @@ const Login = () => {
   if (authenticated) redirect("/");
   return (
     <div className={styles.loginScreen}>
-      <div className="card flex justify-content-center"></div>
       <div className={styles.applicationBio}>
         <div>
           <h2>
@@ -122,15 +130,15 @@ const Login = () => {
         </div>
         <div className={styles.loginButtons}>
           <Button
-            onClick={signInType === "password" ? handleLogin : handleMagicLogin}
+            onClick={signInType === "password" ? handleLogin : handleMagicLogin}  //calling submit function depending on the type of login
             className={styles.button}
             disabled={
               (submit ||
                 !username ||
                 (!password && signInType === "password")) &&
               true
-            }
-            label={signInType === "password" ? "Sign In" : "Send Link"}
+            } // setting disabled true if user or password is empty or user have clicked it once
+            label={signInType === "password" ? "Sign In" : "Send Link"}   // setting label to type of login
           />
           <Button
             onClick={google}
@@ -141,14 +149,14 @@ const Login = () => {
             onClick={() =>
               setSignInType((currentSignInType) => {
                 return currentSignInType === "password" ? "magic" : "password";
-              })
+              }) // change type of login
             }
             className={styles.button}
             label={
               signInType === "password"
                 ? "Sign In with Magic Link"
                 : "Sign In with Password"
-            }
+            } // setting label to type of login requested
           />
         </div>
       </div>

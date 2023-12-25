@@ -7,6 +7,7 @@ import { IoSettings, IoNotifications } from "react-icons/io5";
 import { MdSubscriptions } from "react-icons/md";
 import React from "react";
 
+// Left Bar Buttons in an Array
 const featureElements = [
   {
     name: "Dashboard",
@@ -62,12 +63,14 @@ const featureElements = [
 const Leftbar = () => {
   return (
     <div className={`${styles.leftBar}`}>
+      {/* Rendering Logo Of the Application */}
       <Image
         src="/merina.png"
         width="101"
         height="63"
         className={`${styles.logo}`}
       />
+      {/* All Left Bar Buttons */}
       <div className={`${styles.featureContainer}`}>
         {featureElements.map((ele, id) => {
           return (
@@ -75,12 +78,13 @@ const Leftbar = () => {
               key={id}
               className={`${styles.featureElement} ${id === 0 && styles.active}`}
             >
-                {ele.icon && React.createElement(ele.icon,{className:`${styles.featureLogo}`})}
+                {ele.icon && React.createElement(ele.icon,{className:`${styles.featureLogo}`})}    {/* Using React.createElement() as ele.icon contains the JSX element in Raw Format*/}
               <p className={`${styles.featureElement}`}>{ele.name}</p>
             </div>
           );
         })}
       </div>
+      {/* Contact Support Button */}
       <div className={`${styles.lastFeatureContainer}`}>
         <div className={`${styles.lastFeature}`}>
           <FaHeadphonesAlt className={styles.featureLogo} style={{padding:"10px", fontSize:"1.1rem"}}/>
