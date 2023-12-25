@@ -17,7 +17,7 @@ const NavBar = () => {
   
   useEffect(()=>{
     const fetchUser = async ()=>{
-        const response = await axios.get("https://merina-backend-production.up.railway.app/login/success",{withCredentials:true});
+        const response = await axios.get("http://localhost:5555/login/success",{withCredentials:true});
         console.log(response);
         updateUser(response.data.user)
     }
@@ -25,7 +25,7 @@ const NavBar = () => {
   },[])
 
   const logout = async ()=>{
-    const res = await axios.get("https://merina-backend-production.up.railway.app/logout",{withCredentials:true});
+    const res = await axios.get("http://localhost:5555/logout",{withCredentials:true});
     if(res.data.msg) router.push("/login")
 
   }
