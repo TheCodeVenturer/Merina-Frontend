@@ -33,7 +33,7 @@ const Login = () => {
           setUsername("");
           setPassword("");
         });
-        await newPromise();
+        newPromise.then(()=>{},()=>{});
       }
       throw new Error("User Not Found")
     } catch (err) {
