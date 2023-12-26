@@ -53,4 +53,4 @@
 4. Designed Passport-Magic Login setup
 
 ### Challenges in the Above Flow
-1. 
+1. It was hard to integrate Passport login
