@@ -1,18 +1,18 @@
 $primaryColor: #7950f2;
 $text: #030229;
 .leftBar {
+  height:100vh;
   height: fit-content;
   width: 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 18px;
+  padding: 15px 18px;
   box-sizing: border-box;
-
   .logo {
     margin: 10px 0;
-    width: 101px;
-    height: 63px;
+    width: 100px;
+    height: 60px;
   }
 
   .featureContainer {
